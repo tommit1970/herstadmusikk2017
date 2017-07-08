@@ -1,0 +1,9 @@
+# Here I will put all the filenames of files that are not to be git'ed - eg. .gitignore
+
+# Example 1
+# Files with the .a extension will not be git'ed
+*.a
+
+# Example 2
+# The file larsbrolin.txt will not be git'ed
+larsbrolin.txt
