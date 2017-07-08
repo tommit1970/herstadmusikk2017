@@ -11,6 +11,9 @@
 
     <?php
     
+                // Default name
+                $user = 'no name as Default';
+    
                // Passord sjekk skjer her:
     
                 $un = $_POST['username'];
@@ -63,6 +66,7 @@
                     
                     if($row['username'] == $un && $row['password'] == $p){
                         echo 'You\'re granted access to Herstadmusikk2017. Congrats!<br>';
+                        $user = $row['username'];
                         break;
                     }else{
                         echo 'Sorry! Access denied!<br>';
@@ -86,7 +90,7 @@
 
     ?>    
     
-    <p>Hello <?php echo $row["firstname"]; ?>!</p>
+    <p>Hello <?php echo $user; ?>!</p>
     <script src="script/app.js"></script>
 </body>
 </html>

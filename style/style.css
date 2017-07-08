@@ -1,5 +1,6 @@
 /* Here I will put styling to the homepages of herstadmusikk2017 */
 
 body {
-    background-color: hsla(0, 100, 50, 1.0);
+    background-color: hsla(120, 10%, 40%, 1.0);
+    color: white;
 }
