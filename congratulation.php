@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="no">
 <head>
@@ -8,6 +13,22 @@
 </head>
 
 <body>
+    
+    <?php
+    
+    if(isset($_SESSION['userstored'])){
+        $user = $_SESSION['userstored'];
+    }else{
+        $user = 'unknown user';
+    }
+        
+    
+    
+    echo 'Velkommen til Herstadmusikk2017,'.$user;
+    
+    
+    
+    ?>
     <p class="congrats">You made it! Congratulations!</p>
     
     <script src="script/appcongrats.js"></script>

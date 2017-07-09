@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -70,6 +75,7 @@
                         $granted = true;
                         
                         $user = $row['firstname'];
+                        $_SESSION['userstored'] = $user;
                         break;
                     }else{
                        
@@ -98,8 +104,8 @@
  
             }else{
                 // Go on
-                echo '<p><a href="congratulation.html">Continue!</a></p>';
                 echo '<p>Hello '.$user.'!</p>';
+                echo '<p><a href="congratulation.php">Continue!</a></p>';
             }
     
 
