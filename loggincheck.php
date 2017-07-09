@@ -87,6 +87,7 @@
     ?>    
     
     <p>Hello <?php echo $row["firstname"]; ?>!</p>
+    <p>Hello again!</p>
     <script src="script/app.js"></script>
 </body>
 </html>
