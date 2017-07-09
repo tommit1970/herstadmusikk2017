@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Herstadmusikk2017Logginn</title>
+    <title>Herstadmusikk 2017 Logginn</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
 
@@ -74,6 +74,8 @@
                     if($row['username'] == $un && $row['password'] == $p){
                         echo 'You\'re granted access to Herstadmusikk2017. Congrats!<br>';
                         $granted = true;
+                        
+                        $user = $row['firstname'];
                         break;
                     }else{
                        
