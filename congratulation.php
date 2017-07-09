@@ -24,7 +24,7 @@ session_start();
         
     
     
-    echo 'Velkommen til Herstadmusikk2017,'.$user;
+    echo 'Velkommen til Herstadmusikk2017, '.$user.'!';
     
     
     
