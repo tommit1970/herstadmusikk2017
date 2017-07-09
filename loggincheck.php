@@ -23,15 +23,17 @@
     
     // Oppkobling skjer her
     
+    // Superhemmelig når jeg går github
+    
             $servername = "localhost"; 
-            $username = "root";  // change to "id21409897_root" on herstadmusikk2017.tk / herstadmusikk2017.000webhostapp.com
-            $password = "trojaner"; // scramble when I go github
-            $database = "herstad2017";  // change to "id2140897_herstadmusikk2017" because of 000webhostMySQL
+            $username = "xxx";  // change to "xxx" on herstadmusikk2017.tk / herstadmusikk2017.000webhostapp.com
+            $password = "xxx"; // scramble when I go github
+            $database = "xxx";  // change to "xxx" because of 000webhostMySQL
 
-            // Create connection
+            // Create connection - object-oriented style
             $conn = new mysqli($servername, $username, $password, $database);
 
-                // Check connection
+                // Check connection - oo-style
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 } 
@@ -42,7 +44,7 @@
     
             $sql = "SELECT id,firstname,username,password,email FROM elever2005";
     
-            $result = mysqli_query($conn, $sql);
+            $result = mysqli_query($conn, $sql); // procedural style
     
             echo "MySQLresultatet er av typen: ".gettype($result)."<br>";
     
@@ -52,7 +54,7 @@
                 echo 'Nothing here!<br><br><br>';
             }else{
                 echo 'Something here!<br>';
-                echo 'Actually, we got '.$result->num_rows.' rows of information.<br><br><br><br>';
+                echo 'Actually, we got '.$result->num_rows.' rows of information.<br><br><br><br>'; // $result->num_rows (oo-style)
             }
     
         
@@ -60,7 +62,7 @@
     // output data of each row
                 while($row = mysqli_fetch_assoc($result)) { 
                     // returnerer en assosiativ array ["id" => 1, "firstname" => "mahdi", "username" => "mah"]
-                    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]." - ";
+                    echo "id: " . $row['id']. " - Name: " . $row['firstname']." - ";
                     
                     print_r($row)." - ";
                     
