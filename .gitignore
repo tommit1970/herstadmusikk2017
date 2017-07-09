@@ -1,4 +1,4 @@
-# Here I will put all the filenames of files that are not to be git'ed - eg. .gitignore
+# Disse filene skal ikke git'es
 
 # Example 1
 # Files with the .a extension will not be git'ed

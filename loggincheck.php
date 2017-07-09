@@ -19,6 +19,8 @@
                 $un = $_POST['username'];
                 $p = $_POST['password'];
     
+                $granted = false;
+    
     
     
     // Oppkobling skjer her
@@ -37,62 +39,75 @@
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 } 
-                echo "Connected successfully<br><br><br>";
     
-    
-            
-    
-            $sql = "SELECT id,firstname,username,password,email FROM elever2005";
+            // The Query
+                
+            $sql = "SELECT id,firstname,username,password FROM elever2005";
     
             $result = mysqli_query($conn, $sql); // procedural style
     
-            echo "MySQLresultatet er av typen: ".gettype($result)."<br>";
+//            echo "MySQLresultatet er av typen: ".gettype($result)."<br>";
     
-            print_r($result);
+//            print_r($result);
     
             if(!isset($result)){
-                echo 'Nothing here!<br><br><br>';
+                echo 'Nothing in the database!<br><br><br>';
             }else{
-                echo 'Something here!<br>';
-                echo 'Actually, we got '.$result->num_rows.' rows of information.<br><br><br><br>'; // $result->num_rows (oo-style)
+               echo "Connected successfully to database!<br><br><br>";
+//                echo 'Actually, we got '.$result->num_rows.' rows of information.<br><br><br><br>';
             }
     
-        
-            if (mysqli_num_rows($result) > 0) {
-    // output data of each row
+            // Compare users log in data with database log in data, line by line
+    
+                if (mysqli_num_rows($result) > 0) {
+                
+            // Run through the whole query line by line
+                
                 while($row = mysqli_fetch_assoc($result)) { 
                     // returnerer en assosiativ array ["id" => 1, "firstname" => "mahdi", "username" => "mah"]
-                    echo "id: " . $row['id']. " - Name: " . $row['firstname']." - ";
+
+//                    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]." - ";
+
                     
-                    print_r($row)." - ";
+//                    print_r($row)." - ";
                     
                     if($row['username'] == $un && $row['password'] == $p){
                         echo 'You\'re granted access to Herstadmusikk2017. Congrats!<br>';
-                        $user = $row['username'];
+                        $granted = true;
                         break;
                     }else{
-                        echo 'Sorry! Access denied!<br>';
+                       
                     }
 
                     
                     
                 }
+                
+                if(!$granted){
+                    echo 'Sorry! Access denied! Check "Username" and "Password"!<br>';
+                }
 
-            } else {
-                echo "0 results";
-            }
+                
+                }else{
+                    echo "No items in database!";
+                }
             
 
             mysqli_close($conn);
     
-            // Send back with message or Send inn
+        
+            if(!$granted){
+                // Go back
+                echo '<p><a href="index.html">Try again!</a></p>';
+            }else{
+                // Go on
+                echo '<p><a href="congratulation.html">Continue!</a></p>';
+            }
     
-
-
 
     ?>    
     
-    <p>Hello <?php echo $user; ?>!</p>
-    <script src="script/app.js"></script>
+    <p>Hello <?php echo $row["firstname"]; ?>!</p>
+    <script src="script/apploggincheck.js"></script>
 </body>
 </html>
