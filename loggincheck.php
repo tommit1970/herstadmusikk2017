@@ -12,7 +12,7 @@
     <?php
     
                 // Default name
-                $user = 'no name as Default';
+                $user = 'No firstname in database!';
     
                // Passord sjekk skjer her:
     
@@ -25,12 +25,10 @@
     
     // Oppkobling skjer her
     
-    // Superhemmelig når jeg går github
-    
             $servername = "localhost"; 
             $username = "root";  // change to "id2140897_root" on herstadmusikk2017.tk / herstadmusikk2017.000webhostapp.com
             $password = "trojaner"; // scramble when I go github
-            $database = "herstadmusikk2017";  // change to "id2140897_herstadmusikk2017" because of 000webhostMySQL
+            $database = "herstad2017";  // change to "id2140897_herstad2017" because of 000webhostMySQL
 
             // Create connection - object-oriented style
             $conn = new mysqli($servername, $username, $password, $database);
@@ -64,13 +62,9 @@
             // Run through the whole query line by line
                 
                 while($row = mysqli_fetch_assoc($result)) { 
-                    // returnerer en assosiativ array ["id" => 1, "firstname" => "mahdi", "username" => "mah"]
+                    // returnerer en assosiativ array ["id" => 1, "firstname" => "xxx", "username" => "xxx", "password" => "xxx"]
 
-//                    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]." - ";
-
-                    
-//                    print_r($row)." - ";
-                    
+         
                     if($row['username'] == $un && $row['password'] == $p){
                         echo 'You\'re granted access to Herstadmusikk2017. Congrats!<br>';
                         $granted = true;
@@ -101,15 +95,16 @@
             if(!$granted){
                 // Go back
                 echo '<p><a href="index.html">Try again!</a></p>';
+ 
             }else{
                 // Go on
                 echo '<p><a href="congratulation.html">Continue!</a></p>';
+                echo '<p>Hello '.$user.'!</p>';
             }
     
 
     ?>    
-    
-    <p>Hello <?php echo $row["firstname"]; ?>!</p>
+
     <script src="script/apploggincheck.js"></script>
 </body>
 </html>
