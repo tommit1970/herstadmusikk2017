@@ -23,10 +23,10 @@
     
     // Oppkobling skjer her
     
-            $servername = "localhost";
-            $username = "root";
-            $password = "trojaner";
-            $database = "herstad2017";
+            $servername = "localhost"; 
+            $username = "root";  // change to "id21409897_root" on herstadmusikk2017.tk / herstadmusikk2017.000webhostapp.com
+            $password = "trojaner"; // scramble when I go github
+            $database = "herstad2017";  // change to "id2140897_herstadmusikk2017" because of 000webhostMySQL
 
             // Create connection
             $conn = new mysqli($servername, $username, $password, $database);
