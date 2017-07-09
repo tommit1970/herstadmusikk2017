@@ -26,9 +26,9 @@
     // Superhemmelig når jeg går github
     
             $servername = "localhost"; 
-            $username = "xxx";  // change to "xxx" on herstadmusikk2017.tk / herstadmusikk2017.000webhostapp.com
-            $password = "xxx"; // scramble when I go github
-            $database = "xxx";  // change to "xxx" because of 000webhostMySQL
+            $username = "root";  // change to "id2140897_root" on herstadmusikk2017.tk / herstadmusikk2017.000webhostapp.com
+            $password = "trojaner"; // scramble when I go github
+            $database = "herstadmusikk2017";  // change to "id2140897_herstadmusikk2017" because of 000webhostMySQL
 
             // Create connection - object-oriented style
             $conn = new mysqli($servername, $username, $password, $database);
