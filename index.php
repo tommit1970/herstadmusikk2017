@@ -1,6 +1,5 @@
-<?php
-
-session_start();
+<?php // PHP 0
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -8,12 +7,31 @@ session_start();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Congratulation Herstadmusikk2017</title>
+    <title>Herstadmusikk2017</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
+    
+            <?php // PHP 1
+    
+
+                if(isset($_SESSION['userstored'])){
+                    
+                    if($_SESSION['userstored'] == '%Terminate%'){
+                        $user = 'unknown user';
+//                        echo 'Session Destroyed!'; // Remove this later
+                        session_destroy();
+                    }else{
+                        $user = $_SESSION['userstored'];
+                    }
+                    
+                }else{
+                    $user = 'unknown user';
+                }
+
+            ?>
     
     <header></header>
     
@@ -27,7 +45,7 @@ session_start();
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand">Herstad Musikk</a>
+                <a href="#" class="navbar-brand">Herstad Musikk 2017</a>
             </div>
             
 <!--            Menu items  -->
@@ -64,7 +82,22 @@ session_start();
                 
 <!--                Menu items right-side -->
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <?php // PHP 2
+                    
+                    if($user != 'unknown user'){
+                        // show loggut
+                        echo '<li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Loggut</a></li>';
+                        
+                        $_SESSION['userstored'] = '%Terminate%';
+                        
+                    }else{
+                        // show logginn
+                        echo '<li><a href="logginnherstad2017.html"><span class="glyphicon glyphicon-log-in"></span> Logginn</a></li>';
+                    }
+                    
+                    
+                    ?>
+                    
                 </ul>
                 
             </div>
@@ -72,18 +105,9 @@ session_start();
       </nav>
     
     <main>
-          <?php
-    
-            if(isset($_SESSION['userstored'])){
-                $user = $_SESSION['userstored'];
-            }else{
-                $user = 'unknown user';
-            }
 
-            echo 'Velkommen til Herstadmusikk2017, '.$user.'!';
-
-
-
+            <?php // PHP 3
+                echo 'Velkommen til Herstadmusikk2017, '.$user.'!';
             ?>
         <div>Intro spørsmål her</div>
         <div>Video her</div>
@@ -95,6 +119,6 @@ session_start();
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="script/appcongrats.js"></script>
+    <script src="script/appindex.js"></script>
 </body>
 </html>
