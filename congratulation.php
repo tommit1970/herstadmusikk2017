@@ -31,6 +31,8 @@ session_start();
     ?>
     <p class="congrats">You made it! Congratulations!</p>
     
+    <p>Just added!</p>
+    
     <script src="script/appcongrats.js"></script>
 </body>
 </html>
