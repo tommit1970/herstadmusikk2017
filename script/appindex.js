@@ -1,3 +1,6 @@
-// The app to index.html
+// The app to congratulation.html
 
-console.log('Hello index!');
+
+console.log('Hello index.php!');
+
+console.log('');
