@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    
+
             <?php // PHP 1
     
 
@@ -109,9 +109,105 @@
             <?php // PHP 3
                 echo 'Velkommen til Herstadmusikk2017, '.$user.'!';
             ?>
-        <div>Intro spørsmål her</div>
-        <div>Video her</div>
-        <div>Prøve her</div>
+        
+        <!-- Her designer jeg et oppsett for kunnskapsdrypp Video, bilde, tekst, lyd -->
+        
+        <div class="drypp-container">
+
+                <div class="videodrypp-00">
+                    
+                    <div class="info">
+                        <h3>Overskrift</h3>
+                        <p>Innhold</p>
+                        <p>Fokuser på dette:</p>
+                        <p>Premie for å vise dine kunnskaper!</p>
+                        <p>Se filmen!</p>
+                    </div>
+                    
+                    <div class="video">
+                        <video width="400" controls>
+                              <source src="/videos/video-00.mp4" type="video/mp4">
+                                The video is not supported.
+                        </video>
+                    </div>
+                    
+                    <div class="test">
+                        <p>Oppgave/Spørsmål</p>
+                        <img src="images/Screenshot%20(5).png" width="200" height="117">
+                        
+                        <!-- radiobutton svar rett_galt-->
+                        
+                        <form class="rett_galt" action="#" method="post">
+                                <input type="radio" name="varname" value="alt1" checked> Alt 1<br>
+                                <input type="radio" name="varname" value="alt2"> Alt 2<br>
+                                <input type="radio" name="varname" value="alt3"> Alt 3<br>
+
+
+                        
+                        <!-- tekst svar utfyllende -->
+
+                            <p>
+                                Utfyllende tekst
+                            </p>
+                                <input type="text" name="text" value="skriv her" style="background-color: hsla(120, 100%, 40%, 1.0);">
+
+                                <br>
+                                <br>
+                        
+                        <!-- rullgardin svar rett_galt -->
+                                <p>
+                                    Rullegardin
+                                </p>
+                                    
+                                <select name="answers">
+                                    <option value="alt">Alt</option>
+                                    <option value="alt">Alt</option>
+                                    <option value="alt">Alt</option>
+                                    <option value="alt">Alt</option>
+                                </select>
+
+                                <br>
+                                <br>
+                            
+                        <!-- avkryssningssvar flere alternativer -->
+                            
+                                <p>
+                                    Flervalg
+                                </p>
+                                  <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+                                  <input type="checkbox" name="vehicle2" value="Car"> I have a car<br>
+                                  <input type="checkbox" name="vehicle3" value="Boat" checked> I have a boat<br>
+                            
+                        <!-- submitt button -->
+
+                                <input type="submit" value="Buttontext" style="background-color: blue";>
+                        </form>
+                        
+                    </div>
+                </div>
+            
+            <!-- Bildedrypp kan ligne på videodrypp -->
+                <div class="bildedrypp-00">
+                    <img src="images/Screenshot%20(5).png" width="200" height="117">
+                </div>
+
+            <!-- Bildedrypp kan ligne på videodrypp -->
+                <div class="tekstdrypp-00">
+                        <p>
+                            Non elit expetendis, proident an lorem arbitror. Amet iis eu labore commodo, 
+                            nescius quem aute litteris labore. Varias quamquam de voluptate, ea culpa 
+                            aliquip incurreret, mandaremus amet sunt doctrina quae ut ad quis dolor ipsum 
+                            voluptate, ad laborum id possumus, anim efflorescere incurreret minim officia 
+                            iis id ad exercitation ex id eu elit mentitum. Possumus ita eram non fabulas 
+                            consectetur si tempor, id culpa aute malis laboris quo si malis legam id 
+                            fabulas, ex aut consectetur e ex nisi non varias iis anim fidelissimae mentitum 
+                            fugiat incididunt qui arbitror aut offendit. Iis illum vidisse offendit, admodum 
+                            dolore fugiat ad veniam. Quae mentitum consectetur.
+                        </p>
+                </div>
+            
+            
+        </div>
         
     </main>
     
