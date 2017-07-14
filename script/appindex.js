@@ -3,4 +3,3 @@
 
 console.log('Hello index.php!');
 
-console.log('');
